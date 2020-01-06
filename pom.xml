@@ -33,10 +33,10 @@
         <!-- Only GWT HEAD supports sourceLevel 10 & 11. The latest released GWT supports only 1.8 sourceLevel -->
         <gwt.sourceLevel>1.8</gwt.sourceLevel>
         <java.version>11</java.version>
-<!--        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
--->   
- </properties>
+    </properties>
 
     <repositories>
         <repository>
@@ -340,7 +340,11 @@
             <artifactId>vsac</artifactId>
             <version>1.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>mat</groupId>
+            <artifactId>mat-rest-commons-1.0</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

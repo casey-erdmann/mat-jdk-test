@@ -20,124 +20,40 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
      */
     public static class Result implements IsSerializable {
 
-        /**
-         * The id.
-         */
         private String id;
-
-        /**
-         * The name.
-         */
         private String name;
-
-        /**
-         * The name.
-         */
         private String measureModel;
-
-        /**
-         * The status.
-         */
         private String status;
-
-        /**
-         * The scoring type.
-         */
         private String scoringType;
-
-        /**
-         * The is historical.
-         */
         private boolean isHistorical;
-
-        /**
-         * The is sharable.
-         */
         private boolean isSharable;
-
-        /**
-         * The is editable.
-         */
         private boolean isEditable;
-
-        /**
-         * The is clonable.
-         */
         private boolean isClonable;
-
-        /**
-         * The is exportable.
-         */
         private boolean isExportable;
-
-        /**
-         * The short name.
-         */
+        private boolean isFhirConvertible;
         private String shortName;
-
-        /**
-         * The is measure locked.
-         */
         private boolean isMeasureLocked;
-
-        /**
-         * The locked user info.
-         */
         private LockedUserInfo lockedUserInfo;
-
-        /**
-         * The is transferable.
-         */
         private boolean isTransferable;
         /*US501*/
-        /**
-         * The version.
-         */
         private String version;
 
-        /**
-         * The finalized date.
-         */
         private Timestamp finalizedDate;
 
-        /**
-         * The draft.
-         */
         private boolean draft;
 
-        /**
-         * The measure set id.
-         */
         private String measureSetId;
 
-        /**
-         * The is deleted.
-         */
         private boolean isDeleted;
 
-        /**
-         * The ownerfirst name.
-         */
         private String ownerfirstName;
 
-        /**
-         * The owner last name.
-         */
         private String ownerLastName;
 
-        /**
-         * The owner email address.
-         */
         private String ownerEmailAddress;
 
-        /**
-         * The e measure id.
-         */
         private int eMeasureId;
 
-        /**
-         * The is measure family.
-         */
         private boolean isMeasureFamily;
 
         private String hqmfReleaseVersion;
@@ -154,10 +70,11 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
 
         private String cqlLibraryName;
 
+        private boolean isValidatable;
+
         private int clickCount = 0;
 
         public Result() {
-
         }
 
         public Result(Result result) {
@@ -170,6 +87,8 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
             this.isEditable = result.isEditable();
             this.isClonable = result.isClonable();
             this.isExportable = result.isExportable();
+            this.isFhirConvertible = result.isFhirConvertible();
+            this.isValidatable = result.isValidatable();
             this.shortName = result.getShortName();
             this.isMeasureLocked = result.isMeasureLocked();
             this.lockedUserInfo = result.getLockedUserInfo();
@@ -198,7 +117,7 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
         @Override
         public int hashCode() {
             return Objects.hash(draft, eMeasureId, finalizedDate, hqmfReleaseVersion, id, isClonable, isComposite,
-                    isDeleted, isDraftable, isEditable, isExportable, isHistorical, isMeasureFamily, isMeasureLocked,
+                    isDeleted, isDraftable, isEditable, isExportable, isFhirConvertible, isValidatable, isHistorical, isMeasureFamily, isMeasureLocked,
                     isPatientBased, isSharable, isTransferable, isVersionable, lockedUserInfo, measureSetId, name, measureModel,
                     ownerEmailAddress, ownerLastName, ownerfirstName, qdmVersion, scoringType, shortName, status,
                     version);
@@ -222,6 +141,7 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
                     && isClonable == other.isClonable && Objects.equals(isComposite, other.isComposite)
                     && isDeleted == other.isDeleted && isDraftable == other.isDraftable
                     && isEditable == other.isEditable && isExportable == other.isExportable
+                    && isFhirConvertible == other.isFhirConvertible && isValidatable == other.isValidatable
                     && isHistorical == other.isHistorical && isMeasureFamily == other.isMeasureFamily
                     && isMeasureLocked == other.isMeasureLocked && Objects.equals(isPatientBased, other.isPatientBased)
                     && isSharable == other.isSharable && isTransferable == other.isTransferable
@@ -469,6 +389,14 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
             this.isExportable = isExportable;
         }
 
+        public boolean isFhirConvertible() {
+            return isFhirConvertible;
+        }
+
+        public void setFhirConvertible(boolean fhirConvertible) {
+            isFhirConvertible = fhirConvertible;
+        }
+
         /**
          * Checks if is measure locked.
          *
@@ -521,6 +449,24 @@ public class ManageMeasureSearchModel implements IsSerializable, SearchResults<M
          */
         public void setVersion(String version) {
             this.version = version;
+        }
+
+        /**
+         * Gets the isValidatable.
+         *
+         * @return the isValidatable
+         */
+        public boolean isValidatable() {
+            return this.isValidatable;
+        }
+
+        /**
+         * Sets the isValidatable.
+         *
+         * @param isValidatable the new isValidatable
+         */
+        public void setValidatable(boolean isValidatable) {
+            this.isValidatable = isValidatable;
         }
 
         /**

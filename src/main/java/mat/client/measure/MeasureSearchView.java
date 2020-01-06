@@ -90,6 +90,10 @@ public class MeasureSearchView implements HasSelectionHandlers<ManageMeasureSear
         void onHistoryClicked(ManageMeasureSearchModel.Result result);
 
         void onDraftOrVersionClick(ManageMeasureSearchModel.Result object);
+
+        void onConvert(Result object);
+
+        void onFhirValidationClicked(ManageMeasureSearchModel.Result object);
     }
 
     public MeasureSearchView(String view) {
@@ -172,7 +176,7 @@ public class MeasureSearchView implements HasSelectionHandlers<ManageMeasureSear
                 cellTablePanel.add(invisibleLabel);
             } else {
 
-                MeasureLibraryGridToolbar gridToolbar = new MeasureLibraryGridToolbar();
+                MeasureLibraryGridToolbar gridToolbar = MeasureLibraryGridToolbar.withOptionsFromFlags();
                 gridToolbar.getElement().setAttribute("id", "MeasureSearchCellTable_gridToolbar");
 
                 table = measureLibraryResultTable.addColumnToTable(gridToolbar, table, MeasureSearchView.this);

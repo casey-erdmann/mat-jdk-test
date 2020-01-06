@@ -37,7 +37,8 @@ public class MostRecentMeasureWidget extends Composite implements HasSelectionHa
     }
 
     void buildCellTable() {
-        MeasureLibraryGridToolbar gridToolbar = new MeasureLibraryGridToolbar();
+        MeasureLibraryGridToolbar gridToolbar = MeasureLibraryGridToolbar.withOptionsFromFlags();
+        gridToolbar.getElement().setAttribute("id", "MostRecentActivityCellTable_gridToolbar");
 
         searchPanel.setStyleName("cellTablePanel");
         cellTable.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.ENABLED);
