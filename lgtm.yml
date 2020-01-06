@@ -1,6 +1,7 @@
 extraction:
   java:
     index:
+      java_version: 11
       build_command:
       - "./install-deps.sh"
       - "mvn clean package -f \"pom.xml\" -B -V -e -Dfindbugs.skip -Dcheckstyle.skip\
