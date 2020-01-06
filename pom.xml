@@ -33,8 +33,6 @@
         <!-- Only GWT HEAD supports sourceLevel 10 & 11. The latest released GWT supports only 1.8 sourceLevel -->
         <gwt.sourceLevel>1.8</gwt.sourceLevel>
         <java.version>11</java.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <repositories>
